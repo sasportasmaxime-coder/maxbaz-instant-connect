@@ -67,44 +67,45 @@ const PricingSection = () => {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`bg-card p-8 rounded-2xl shadow-card transition-smooth relative ${
-                plan.featured
-                  ? "border-2 border-accent md:scale-105 md:-my-4"
-                  : "hover:shadow-hover"
+              className={`bg-card rounded-2xl p-8 shadow-card hover:shadow-hover transition-smooth relative ${
+                plan.featured ? "border-2 border-accent md:scale-105" : ""
               }`}
             >
               {plan.featured && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent text-accent-foreground px-4 py-1 rounded-full text-sm font-semibold">
-                  Plus populaire
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent text-accent-foreground px-6 py-2 rounded-full font-bold shadow-lg">
+                  🔥 Plus populaire
                 </div>
               )}
-
-              <div className="text-center mb-8">
-                <h3 className="text-xl font-bold text-primary mb-4">
-                  {plan.name}
-                </h3>
-                <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-4xl font-bold text-foreground">
-                    {plan.price}
-                  </span>
-                  <span className="text-muted-foreground">{plan.period}</span>
+              
+              <div className="text-center mb-6 mt-2">
+                <h3 className="text-xl font-bold text-primary mb-2">{plan.name}</h3>
+                <div className="flex items-baseline justify-center gap-2">
+                  <span className="text-4xl md:text-5xl font-bold text-primary">{plan.price}</span>
+                  {plan.period && <span className="text-muted-foreground">{plan.period}</span>}
                 </div>
+                {plan.featured && (
+                  <p className="text-sm text-accent font-semibold mt-2">
+                    Meilleur rapport qualité/prix
+                  </p>
+                )}
               </div>
 
               <ul className="space-y-4 mb-8">
                 {plan.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-start gap-3">
-                    <Check className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-                    <span className="text-foreground">{feature}</span>
+                    <div className="w-5 h-5 bg-accent rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="w-3 h-3 text-accent-foreground" />
+                    </div>
+                    <span className="text-muted-foreground">{feature}</span>
                   </li>
                 ))}
               </ul>
 
               <Button
-                variant={plan.featured ? "hero" : "outline"}
-                size="lg"
-                className="w-full"
                 onClick={scrollToContact}
+                variant={plan.featured ? "hero" : "outline"}
+                className="w-full"
+                size="lg"
               >
                 {plan.name === "CUSTOM" ? "Demander un devis" : "Commencer Gratuitement"}
               </Button>

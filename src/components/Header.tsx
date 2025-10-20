@@ -54,7 +54,7 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
+            {navItems.slice(1, 5).map((item) => (
               <a
                 key={item.label}
                 href={item.href}
@@ -68,6 +68,23 @@ const Header = () => {
               </a>
             ))}
           </nav>
+
+          {/* CTA Buttons */}
+          <div className="hidden md:flex items-center gap-4">
+            <a
+              href="#connexion"
+              className="text-primary font-medium hover:text-primary/80 transition-smooth"
+            >
+              Connexion
+            </a>
+            <Button
+              variant="hero"
+              size="lg"
+              onClick={() => scrollToSection("#contact")}
+            >
+              Essai gratuit 14j →
+            </Button>
+          </div>
 
           {/* Mobile Menu Button */}
           <Button

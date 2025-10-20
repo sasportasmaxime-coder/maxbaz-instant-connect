@@ -53,37 +53,32 @@ const FaqSection = () => {
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="bg-secondary rounded-xl overflow-hidden transition-smooth"
+                className="border border-border rounded-xl overflow-hidden bg-card"
               >
                 <button
                   onClick={() => toggleFaq(index)}
-                  className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-secondary/80 transition-smooth"
+                  className="w-full flex items-center justify-between p-6 text-left hover:bg-secondary transition-smooth"
                 >
-                  <span className="font-semibold text-foreground pr-4">
-                    {faq.question}
-                  </span>
+                  <div className="flex items-center gap-4 flex-1">
+                    <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <span className="text-accent">❓</span>
+                    </div>
+                    <span className="font-semibold text-lg text-foreground">{faq.question}</span>
+                  </div>
                   <div
-                    className={`flex-shrink-0 transition-transform duration-300 ${
-                      openIndex === index ? "rotate-45" : "rotate-0"
+                    className={`transform transition-smooth ${
+                      openIndex === index ? "rotate-180" : ""
                     }`}
                   >
-                    {openIndex === index ? (
-                      <X className="h-5 w-5 text-accent" />
-                    ) : (
-                      <Plus className="h-5 w-5 text-accent" />
-                    )}
+                    <Plus className="h-6 w-6 text-muted-foreground" />
                   </div>
                 </button>
-
-                <div
-                  className={`overflow-hidden transition-all duration-300 ${
-                    openIndex === index ? "max-h-96" : "max-h-0"
-                  }`}
-                >
-                  <div className="px-6 pb-5 pt-2 text-muted-foreground">
-                    {faq.answer}
+                
+                {openIndex === index && (
+                  <div className="px-6 pb-6 bg-secondary animate-in fade-in slide-in-from-top-2">
+                    <p className="text-muted-foreground pl-14">{faq.answer}</p>
                   </div>
-                </div>
+                )}
               </div>
             ))}
           </div>

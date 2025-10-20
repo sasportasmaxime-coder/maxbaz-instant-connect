@@ -30,10 +30,10 @@ const ContactSection = () => {
     e.preventDefault();
     
     // Validation basique
-    if (!formData.email || !formData.firstName || !formData.lastName || !formData.profession || !formData.phone) {
+    if (!formData.email) {
       toast({
         title: "Erreur",
-        description: "Veuillez remplir tous les champs.",
+        description: "Veuillez entrer votre email.",
         variant: "destructive",
       });
       return;
@@ -41,7 +41,7 @@ const ContactSection = () => {
 
     toast({
       title: "Demande envoyée !",
-      description: "Nous vous contacterons rapidement pour planifier votre créneau.",
+      description: "Nous vous contacterons rapidement pour démarrer votre essai gratuit.",
     });
 
     // Reset form
@@ -62,99 +62,45 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 gradient-contact relative overflow-hidden">
-      {/* Decorative background */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent via-transparent to-primary"></div>
-      </div>
-
+    <section id="contact" className="py-20 px-4 relative overflow-hidden">
+      {/* Gradient background */}
+      <div className="absolute inset-0 gradient-contact"></div>
+      
       <div className="container mx-auto relative z-10">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 text-center">
-            Commencez gratuitement avec MaxBaz
-          </h2>
-          <p className="text-white/90 text-center mb-12 text-lg">
-            Réservez votre créneau pour une démonstration personnalisée
-          </p>
+        <div className="max-w-xl mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Démarrez votre essai gratuit
+            </h2>
+            <p className="text-xl text-blue-100">
+              14 jours • Sans carte bancaire • Sans engagement
+            </p>
+          </div>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Email */}
-            <div>
+          <div className="bg-card rounded-2xl shadow-2xl p-8">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <Input
                 type="email"
                 name="email"
-                placeholder="Email professionnel"
+                placeholder="Votre email professionnel"
                 value={formData.email}
                 onChange={handleChange}
-                className="bg-white/10 backdrop-blur-sm border-white/20 text-white placeholder:text-white/60 rounded-full h-12 px-6 focus:bg-white/20 transition-smooth"
                 required
+                className="h-14 text-lg border-2 border-border focus:border-accent rounded-lg"
               />
-            </div>
-
-            {/* First Name and Last Name */}
-            <div className="grid md:grid-cols-2 gap-4">
-              <Input
-                type="text"
-                name="firstName"
-                placeholder="Prénom"
-                value={formData.firstName}
-                onChange={handleChange}
-                className="bg-white/10 backdrop-blur-sm border-white/20 text-white placeholder:text-white/60 rounded-full h-12 px-6 focus:bg-white/20 transition-smooth"
-                required
-              />
-              <Input
-                type="text"
-                name="lastName"
-                placeholder="Nom"
-                value={formData.lastName}
-                onChange={handleChange}
-                className="bg-white/10 backdrop-blur-sm border-white/20 text-white placeholder:text-white/60 rounded-full h-12 px-6 focus:bg-white/20 transition-smooth"
-                required
-              />
-            </div>
-
-            {/* Profession and Phone */}
-            <div className="grid md:grid-cols-2 gap-4">
-              <select
-                name="profession"
-                value={formData.profession}
-                onChange={handleChange}
-                className="bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-full h-12 px-6 focus:bg-white/20 transition-smooth appearance-none cursor-pointer"
-                required
+              <Button
+                type="submit"
+                variant="hero"
+                size="lg"
+                className="w-full h-14 text-lg rounded-lg"
               >
-                <option value="" className="bg-primary text-white">
-                  Profession
-                </option>
-                {professions.map((profession) => (
-                  <option
-                    key={profession}
-                    value={profession}
-                    className="bg-primary text-white"
-                  >
-                    {profession}
-                  </option>
-                ))}
-              </select>
-              <Input
-                type="tel"
-                name="phone"
-                placeholder="Téléphone"
-                value={formData.phone}
-                onChange={handleChange}
-                className="bg-white/10 backdrop-blur-sm border-white/20 text-white placeholder:text-white/60 rounded-full h-12 px-6 focus:bg-white/20 transition-smooth"
-                required
-              />
-            </div>
-
-            <Button
-              type="submit"
-              variant="hero"
-              size="lg"
-              className="w-full bg-white text-primary hover:bg-white/90 font-bold text-lg h-14"
-            >
-              Sélectionner mon créneau
-            </Button>
-          </form>
+                Démarrer l'essai gratuit →
+              </Button>
+              <p className="text-center text-sm text-muted-foreground mt-4">
+                🔒 Vos données sont sécurisées
+              </p>
+            </form>
+          </div>
         </div>
       </div>
     </section>

@@ -1,8 +1,10 @@
 import Header from "@/components/Header";
 import StickyCtaButton from "@/components/StickyCtaButton";
 import HeroSection from "@/components/HeroSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import DemoSection from "@/components/DemoSection";
 import FeaturesSection from "@/components/FeaturesSection";
+import FeaturesDetailSection from "@/components/FeaturesDetailSection";
 import BeforeAfterSection from "@/components/BeforeAfterSection";
 import PricingSection from "@/components/PricingSection";
 import FaqSection from "@/components/FaqSection";
@@ -16,8 +18,10 @@ const Index = () => {
       <StickyCtaButton />
       <main>
         <HeroSection />
+        <TestimonialsSection />
         <DemoSection />
         <FeaturesSection />
+        <FeaturesDetailSection />
         <BeforeAfterSection />
         <PricingSection />
         <FaqSection />

@@ -22,13 +22,22 @@ const DemoSection = () => {
           </p>
 
           {/* Video Placeholder */}
-          <div className="relative aspect-video rounded-2xl gradient-hero overflow-hidden shadow-hover mb-8 group cursor-pointer">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="bg-card/90 backdrop-blur-sm h-20 w-20 rounded-full flex items-center justify-center group-hover:scale-110 transition-smooth shadow-lg">
-                <Play className="h-10 w-10 text-accent ml-1" />
+          <div className="relative rounded-2xl overflow-hidden shadow-hover mb-8 group cursor-pointer">
+            <div className="relative aspect-video gradient-hero">
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+              
+              {/* Bouton play */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-20 h-20 bg-card rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-smooth">
+                  <Play className="h-8 w-8 text-primary ml-1" />
+                </div>
+              </div>
+              
+              {/* Durée */}
+              <div className="absolute bottom-4 left-4 bg-black/60 px-3 py-1 rounded-full text-white text-sm">
+                ⏱ 2:30 min
               </div>
             </div>
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20"></div>
           </div>
 
           <Button variant="hero" size="lg" onClick={scrollToContact}>
