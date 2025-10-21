@@ -93,7 +93,7 @@ const PricingSection = () => {
                     {/* Price */}
                     <div className="mb-8">
                       <div className="flex items-baseline gap-2">
-                        <span className="text-5xl lg:text-6xl font-bold bg-gradient-to-br from-primary to-accent bg-clip-text text-transparent">
+                        <span className="text-5xl lg:text-6xl font-bold bg-gradient-to-br from-primary to-accent bg-clip-text text-slate-950 text-left">
                           {plan.price}
                         </span>
                         {plan.period && <span className="text-muted-foreground text-lg">{plan.period}</span>}
