@@ -25,10 +25,7 @@ const DemoSection = () => {
               </span>
             </h2>
 
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Découvrez en 2 minutes comment MaxBaz transforme chaque appel manqué
-              en opportunité de rendez-vous qualifié grâce à notre IA.
-            </p>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">Découvrez en 2 minutes comment MaxBaz transforme chaque appel manqué en opportunité de rendez-vous qualifié.</p>
           </div>
 
           {/* Video Placeholder with modern design */}
@@ -63,9 +60,7 @@ const DemoSection = () => {
                 </div>
 
                 {/* View count badge */}
-                <div className="absolute top-6 right-6 glass-dark px-4 py-2 rounded-xl border border-white/20">
-                  <span className="text-white text-sm font-semibold">👁 2,438 vues</span>
-                </div>
+                
               </div>
             </div>
 
@@ -81,12 +76,12 @@ const DemoSection = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="hero" size="lg" onClick={scrollToContact} className="text-lg px-8 py-6 shadow-xl hover-lift hover-glow group">
+              <Button variant="hero" size="lg" onClick={scrollToContact} className="text-lg px-8 py-6 shadow-xl hover-lift hover-glow group bg-green-600 hover:bg-green-500">
                 <span>Essayer gratuitement</span>
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-smooth" />
               </Button>
 
-              <Button variant="outline" size="lg" className="text-lg px-8 py-6 glass border-2 hover-lift">
+              <Button variant="outline" size="lg" className="text-lg px-8 py-6 glass border-2 hover-lift bg-blue-700 hover:bg-blue-600 text-neutral-50">
                 <span>Planifier une démo</span>
               </Button>
             </div>
