@@ -2,46 +2,33 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
-
 const ContactSection = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [formData, setFormData] = useState({
     email: "",
     firstName: "",
     lastName: "",
     profession: "",
-    phone: "",
+    phone: ""
   });
-
-  const professions = [
-    "Plombier",
-    "Électricien",
-    "Serrurier",
-    "Chauffagiste",
-    "Menuisier",
-    "Peintre",
-    "Maçon",
-    "Couvreur",
-    "Carreleur",
-    "Autre",
-  ];
-
+  const professions = ["Plombier", "Électricien", "Serrurier", "Chauffagiste", "Menuisier", "Peintre", "Maçon", "Couvreur", "Carreleur", "Autre"];
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Validation basique
     if (!formData.email) {
       toast({
         title: "Erreur",
         description: "Veuillez entrer votre email.",
-        variant: "destructive",
+        variant: "destructive"
       });
       return;
     }
-
     toast({
       title: "Demande envoyée !",
-      description: "Nous vous contacterons rapidement pour démarrer votre essai gratuit.",
+      description: "Nous vous contacterons rapidement pour démarrer votre essai gratuit."
     });
 
     // Reset form
@@ -50,19 +37,16 @@ const ContactSection = () => {
       firstName: "",
       lastName: "",
       profession: "",
-      phone: "",
+      phone: ""
     });
   };
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     });
   };
-
-  return (
-    <section id="contact" className="py-20 px-4 relative overflow-hidden">
+  return <section id="contact" className="py-20 px-4 relative overflow-hidden">
       {/* Gradient background */}
       <div className="absolute inset-0 gradient-contact"></div>
       
@@ -79,21 +63,8 @@ const ContactSection = () => {
 
           <div className="bg-card rounded-2xl shadow-2xl p-8">
             <form onSubmit={handleSubmit} className="space-y-4">
-              <Input
-                type="email"
-                name="email"
-                placeholder="Votre email professionnel"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="h-14 text-lg border-2 border-border focus:border-accent rounded-lg"
-              />
-              <Button
-                type="submit"
-                variant="hero"
-                size="lg"
-                className="w-full h-14 text-lg rounded-lg"
-              >
+              <Input type="email" name="email" placeholder="Votre email professionnel" value={formData.email} onChange={handleChange} required className="h-14 text-lg border-2 border-border focus:border-accent rounded-lg" />
+              <Button type="submit" variant="hero" size="lg" className="w-full h-14 text-lg rounded-lg bg-green-600 hover:bg-green-500">
                 Démarrer l'essai gratuit →
               </Button>
               <p className="text-center text-sm text-muted-foreground mt-4">
@@ -103,8 +74,6 @@ const ContactSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ContactSection;

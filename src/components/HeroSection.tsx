@@ -44,7 +44,7 @@ const HeroSection = () => {
               <Button size="lg" onClick={scrollToContact} className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all">
                 Essayer gratuitement 14 jours
               </Button>
-              <Button variant="outline" size="lg" onClick={scrollToDemo} className="border-2 border-gray-300 hover:border-blue-600 text-gray-700 hover:text-blue-600 px-8 py-6 text-lg font-semibold rounded-xl transition-all">
+              <Button variant="outline" size="lg" onClick={scrollToDemo} className="border-2 border-gray-300 hover:border-blue-600 px-8 py-6 text-lg font-semibold rounded-xl transition-all bg-emerald-500 hover:bg-emerald-400 text-neutral-50">
                 <Play className="mr-2 h-5 w-5" />
                 Voir comment ça marche
               </Button>
