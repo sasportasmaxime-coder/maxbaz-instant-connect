@@ -1,48 +1,31 @@
 import { useState } from "react";
 import { Plus, X } from "lucide-react";
-
+import plusIcon from "@/assets/plus-icon.png";
 const FaqSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const faqs = [
-    {
-      question: "Comment fonctionne MaxBaz ?",
-      answer:
-        "MaxBaz détecte automatiquement vos appels manqués et envoie immédiatement un SMS au prospect. Le système qualifie ensuite le besoin via une conversation automatisée et propose des créneaux de rendez-vous en se synchronisant avec votre agenda. Vous recevez une notification dès qu'un rendez-vous est confirmé.",
-    },
-    {
-      question: "Est-il possible de tester gratuitement ?",
-      answer:
-        "Oui ! Nous offrons 14 jours d'essai gratuit sans carte bancaire requise. Vous pouvez tester toutes les fonctionnalités de la formule Professionnelle pour évaluer l'impact sur votre activité. Aucun engagement, vous pouvez annuler à tout moment.",
-    },
-    {
-      question: "Combien de temps après l'appel manqué le SMS est-il envoyé ?",
-      answer:
-        "Le SMS est envoyé instantanément, généralement dans les 30 secondes suivant l'appel manqué. Cette rapidité maximise vos chances de convertir le prospect qui est encore dans une démarche active de recherche.",
-    },
-    {
-      question: "Est-ce compatible avec mon numéro de téléphone ?",
-      answer:
-        "MaxBaz est compatible avec tous les opérateurs français et la plupart des numéros professionnels. Que vous utilisiez un numéro fixe, mobile ou une ligne VoIP, notre système s'intègre facilement. Contactez-nous pour vérifier la compatibilité de votre configuration spécifique.",
-    },
-    {
-      question: "Mes données sont-elles sécurisées ?",
-      answer:
-        "Absolument. Toutes vos données sont cryptées et stockées sur des serveurs sécurisés en France, conformes au RGPD. Nous ne partageons jamais vos informations avec des tiers. Vous conservez le contrôle total de vos données et pouvez les exporter ou les supprimer à tout moment.",
-    },
-    {
-      question: "Comment fonctionne votre service après-vente ?",
-      answer:
-        "Notre équipe support est disponible du lundi au vendredi de 9h à 18h par email, téléphone et chat. Les clients Professionnel et Custom bénéficient d'un support prioritaire avec des temps de réponse garantis. Nous proposons également une base de connaissances complète et des tutoriels vidéo.",
-    },
-  ];
-
+  const faqs = [{
+    question: "Comment fonctionne MaxBaz ?",
+    answer: "MaxBaz détecte automatiquement vos appels manqués et envoie immédiatement un SMS au prospect. Le système qualifie ensuite le besoin via une conversation automatisée et propose des créneaux de rendez-vous en se synchronisant avec votre agenda. Vous recevez une notification dès qu'un rendez-vous est confirmé."
+  }, {
+    question: "Est-il possible de tester gratuitement ?",
+    answer: "Oui ! Nous offrons 14 jours d'essai gratuit sans carte bancaire requise. Vous pouvez tester toutes les fonctionnalités de la formule Professionnelle pour évaluer l'impact sur votre activité. Aucun engagement, vous pouvez annuler à tout moment."
+  }, {
+    question: "Combien de temps après l'appel manqué le SMS est-il envoyé ?",
+    answer: "Le SMS est envoyé instantanément, généralement dans les 30 secondes suivant l'appel manqué. Cette rapidité maximise vos chances de convertir le prospect qui est encore dans une démarche active de recherche."
+  }, {
+    question: "Est-ce compatible avec mon numéro de téléphone ?",
+    answer: "MaxBaz est compatible avec tous les opérateurs français et la plupart des numéros professionnels. Que vous utilisiez un numéro fixe, mobile ou une ligne VoIP, notre système s'intègre facilement. Contactez-nous pour vérifier la compatibilité de votre configuration spécifique."
+  }, {
+    question: "Mes données sont-elles sécurisées ?",
+    answer: "Absolument. Toutes vos données sont cryptées et stockées sur des serveurs sécurisés en France, conformes au RGPD. Nous ne partageons jamais vos informations avec des tiers. Vous conservez le contrôle total de vos données et pouvez les exporter ou les supprimer à tout moment."
+  }, {
+    question: "Comment fonctionne votre service après-vente ?",
+    answer: "Notre équipe support est disponible du lundi au vendredi de 9h à 18h par email, téléphone et chat. Les clients Professionnel et Custom bénéficient d'un support prioritaire avec des temps de réponse garantis. Nous proposons également une base de connaissances complète et des tutoriels vidéo."
+  }];
   const toggleFaq = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
-
-  return (
-    <section id="faq" className="py-20 px-4 bg-card">
+  return <section id="faq" className="py-20 px-4 bg-card">
       <div className="container mx-auto">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12 text-center">
@@ -50,42 +33,26 @@ const FaqSection = () => {
           </h2>
 
           <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <div
-                key={index}
-                className="border border-border rounded-xl overflow-hidden bg-card"
-              >
-                <button
-                  onClick={() => toggleFaq(index)}
-                  className="w-full flex items-center justify-between p-6 text-left hover:bg-secondary transition-smooth"
-                >
+            {faqs.map((faq, index) => <div key={index} className="border border-border rounded-xl overflow-hidden bg-card">
+                <button onClick={() => toggleFaq(index)} className="w-full flex items-center justify-between p-6 text-left hover:bg-secondary transition-smooth">
                   <div className="flex items-center gap-4 flex-1">
                     <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <span className="text-accent">❓</span>
+                      <img src={plusIcon} alt="Plus" className="w-5 h-5" />
                     </div>
                     <span className="font-semibold text-lg text-foreground">{faq.question}</span>
                   </div>
-                  <div
-                    className={`transform transition-smooth ${
-                      openIndex === index ? "rotate-180" : ""
-                    }`}
-                  >
+                  <div className={`transform transition-smooth ${openIndex === index ? "rotate-180" : ""}`}>
                     <Plus className="h-6 w-6 text-muted-foreground" />
                   </div>
                 </button>
                 
-                {openIndex === index && (
-                  <div className="px-6 pb-6 bg-secondary animate-in fade-in slide-in-from-top-2">
+                {openIndex === index && <div className="px-6 pb-6 bg-secondary animate-in fade-in slide-in-from-top-2">
                     <p className="text-muted-foreground pl-14">{faq.answer}</p>
-                  </div>
-                )}
-              </div>
-            ))}
+                  </div>}
+              </div>)}
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default FaqSection;

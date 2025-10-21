@@ -1,29 +1,24 @@
 import { Button } from "@/components/ui/button";
 import { Play, Check, TrendingUp, Zap } from "lucide-react";
-
 const HeroSection = () => {
   const scrollToDemo = () => {
     const element = document.querySelector("#demonstration");
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({
+        behavior: "smooth"
+      });
     }
   };
-
   const scrollToContact = () => {
     const element = document.querySelector("#contact");
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({
+        behavior: "smooth"
+      });
     }
   };
-
-  const benefits = [
-    "Réponse automatique en moins de 60 secondes",
-    "+40% de rendez-vous confirmés",
-    "Synchronisation avec votre agenda"
-  ];
-
-  return (
-    <section id="accueil" className="relative pt-32 pb-24 px-4 overflow-hidden">
+  const benefits = ["Réponse automatique en moins de 60 secondes", "+40% de rendez-vous confirmés", "Synchronisation avec votre agenda"];
+  return <section id="accueil" className="relative pt-32 pb-24 px-4 overflow-hidden">
       {/* Gradient mesh background */}
       <div className="absolute inset-0 gradient-mesh pointer-events-none"></div>
       <div className="absolute inset-0 bg-gradient-to-b from-secondary/50 via-background/80 to-background pointer-events-none"></div>
@@ -45,59 +40,30 @@ const HeroSection = () => {
 
             {/* Bénéfices clés */}
             <ul className="space-y-4">
-              {benefits.map((benefit, index) => (
-                <li
-                  key={index}
-                  className="flex items-center gap-4 group"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
+              {benefits.map((benefit, index) => <li key={index} className="flex items-center gap-4 group" style={{
+              animationDelay: `${index * 100}ms`
+            }}>
                   <div className="w-8 h-8 gradient-accent rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-bounce">
                     <Check className="w-5 h-5 text-white" strokeWidth={3} />
                   </div>
                   <span className="text-foreground font-semibold text-lg">{benefit}</span>
-                </li>
-              ))}
+                </li>)}
             </ul>
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 pt-6">
-              <Button
-                variant="hero"
-                size="lg"
-                onClick={scrollToContact}
-                className="w-full sm:w-auto text-lg px-8 py-6 shadow-xl hover-lift hover-glow group"
-              >
+              <Button variant="hero" size="lg" onClick={scrollToContact} className="w-full sm:w-auto text-lg px-8 py-6 shadow-xl hover-lift hover-glow group">
                 <span>Essayer gratuitement 14 jours</span>
                 <Zap className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-smooth" />
               </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                onClick={scrollToDemo}
-                className="w-full sm:w-auto text-lg px-8 py-6 glass border-2 hover-lift group"
-              >
+              <Button variant="outline" size="lg" onClick={scrollToDemo} className="w-full sm:w-auto text-lg px-8 py-6 glass border-2 hover-lift group">
                 <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-bounce" />
                 <span>Voir comment ça marche</span>
               </Button>
             </div>
 
             {/* Stats rapides */}
-            <div className="flex flex-wrap gap-8 pt-4">
-              <div className="flex items-center gap-2">
-                <TrendingUp className="w-5 h-5 text-accent" />
-                <div>
-                  <p className="text-2xl font-bold text-primary">+40%</p>
-                  <p className="text-sm text-muted-foreground">Conversion</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-2">
-                <Zap className="w-5 h-5 text-accent" />
-                <div>
-                  <p className="text-2xl font-bold text-primary">&lt;60s</p>
-                  <p className="text-sm text-muted-foreground">Réponse</p>
-                </div>
-              </div>
-            </div>
+            
           </div>
 
           {/* Screenshot produit avec notification animée */}
@@ -142,7 +108,9 @@ const HeroSection = () => {
               </div>
             </div>
 
-            <div className="absolute -bottom-4 -left-4 glass rounded-2xl shadow-2xl p-4 animate-fade-in hover-lift" style={{ animationDelay: '200ms' }}>
+            <div className="absolute -bottom-4 -left-4 glass rounded-2xl shadow-2xl p-4 animate-fade-in hover-lift" style={{
+            animationDelay: '200ms'
+          }}>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 gradient-hero rounded-xl flex items-center justify-center">
                   <TrendingUp className="w-5 h-5 text-white" />
@@ -156,8 +124,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
