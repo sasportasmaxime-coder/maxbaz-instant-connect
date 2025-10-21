@@ -1,26 +1,22 @@
 import { Button } from "@/components/ui/button";
 import { Play, Sparkles, ArrowRight } from "lucide-react";
-
 const DemoSection = () => {
   const scrollToContact = () => {
     const element = document.querySelector("#contact");
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({
+        behavior: "smooth"
+      });
     }
   };
-
-  return (
-    <section id="demonstration" className="relative py-24 px-4 overflow-hidden">
+  return <section id="demonstration" className="relative py-24 px-4 overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/30 to-background"></div>
 
       <div className="container mx-auto relative z-10">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16 animate-fade-up">
-            <div className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full mb-6">
-              <Sparkles className="w-4 h-4 text-accent" />
-              <span className="text-accent font-semibold text-sm">Démonstration</span>
-            </div>
+            
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Comment{" "}
@@ -44,9 +40,9 @@ const DemoSection = () => {
 
                 {/* Grid pattern overlay */}
                 <div className="absolute inset-0 opacity-10" style={{
-                  backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
-                  backgroundSize: '50px 50px'
-                }}></div>
+                backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+                backgroundSize: '50px 50px'
+              }}></div>
 
                 {/* Play button with glow effect */}
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -85,21 +81,12 @@ const DemoSection = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                variant="hero"
-                size="lg"
-                onClick={scrollToContact}
-                className="text-lg px-8 py-6 shadow-xl hover-lift hover-glow group"
-              >
+              <Button variant="hero" size="lg" onClick={scrollToContact} className="text-lg px-8 py-6 shadow-xl hover-lift hover-glow group">
                 <span>Essayer gratuitement</span>
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-smooth" />
               </Button>
 
-              <Button
-                variant="outline"
-                size="lg"
-                className="text-lg px-8 py-6 glass border-2 hover-lift"
-              >
+              <Button variant="outline" size="lg" className="text-lg px-8 py-6 glass border-2 hover-lift">
                 <span>Planifier une démo</span>
               </Button>
             </div>
@@ -122,8 +109,6 @@ const DemoSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default DemoSection;
