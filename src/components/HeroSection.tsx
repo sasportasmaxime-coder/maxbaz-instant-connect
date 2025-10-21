@@ -24,6 +24,10 @@ const HeroSection = () => {
 
   return (
     <section id="accueil" className="relative pt-32 pb-24 px-4 overflow-hidden bg-gradient-to-b from-blue-50/30 via-white to-white">
+      {/* NOUVEAU DESIGN - VERSION DU 21 OCT 2025 */}
+      <div className="fixed top-0 left-0 bg-green-500 text-white px-4 py-2 z-50 text-sm font-bold">
+        ✓ NOUVEAU DESIGN CHARGÉ
+      </div>
       {/* Formes fluides en arrière-plan */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 -left-20 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl"></div>
@@ -38,9 +42,7 @@ const HeroSection = () => {
             {/* Titre principal */}
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-gray-900">
               Transformez vos appels manqués en{" "}
-              <span className="text-blue-600">
-                clients satisfaits
-              </span>
+              <span className="text-blue-600">clients satisfaits</span>
             </h1>
 
             {/* Sous-titre */}
