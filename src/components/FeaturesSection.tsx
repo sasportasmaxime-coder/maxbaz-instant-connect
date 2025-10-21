@@ -37,11 +37,7 @@ const FeaturesSection = () => {
           </h2>
 
           <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-            MaxBaz est une plateforme complète d'automatisation de prise de rendez-vous
-            conçue spécialement pour les artisans et professionnels de terrain.
-            Transformez chaque appel manqué en opportunité commerciale grâce à notre
-            technologie intelligente qui qualifie, engage et convertit vos prospects
-            automatiquement.
+            MaxBaz est une plateforme qui automatise la prise de rendez-vous pour les artisans et professionnels. Elle transforme chaque appel manqué en opportunité grâce à notre technologie qui qualifie et confirme le créneau choisi automatiquement.
           </p>
         </div>
 

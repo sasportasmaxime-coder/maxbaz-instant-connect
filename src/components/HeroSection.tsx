@@ -29,7 +29,7 @@ const HeroSection = () => {
             {/* Titre impact */}
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-foreground">
               Transformez vos appels manqués en{" "}
-              <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-emerald-500">
+              <span className="text-accent">
                 clients satisfaits
               </span>
             </h1>
