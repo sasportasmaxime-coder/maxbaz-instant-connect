@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Plus, X } from "lucide-react";
+import plusIcon from "@/assets/plus-icon.png";
 const FaqSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const faqs = [{
@@ -36,7 +37,7 @@ const FaqSection = () => {
                 <button onClick={() => toggleFaq(index)} className="w-full flex items-center justify-between p-6 text-left hover:bg-secondary transition-smooth">
                   <div className="flex items-center gap-4 flex-1">
                     <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <span className="text-accent"></span>
+                      <img src={plusIcon} alt="Plus" className="w-5 h-5" />
                     </div>
                     <span className="font-semibold text-lg text-foreground">{faq.question}</span>
                   </div>
