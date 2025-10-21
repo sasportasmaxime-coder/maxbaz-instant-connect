@@ -93,7 +93,7 @@ const HeroSection = () => {
                       </div>
                       <TrendingUp className="w-5 h-5 text-green-500" />
                     </div>
-                    <p className="text-3xl font-bold text-gray-900 mb-1">127</p>
+                    <p className="text-3xl font-bold text-gray-900 mb-1">82</p>
                     <p className="text-sm text-gray-500">RDV ce mois</p>
                   </div>
 
