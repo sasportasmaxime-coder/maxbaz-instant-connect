@@ -8,56 +8,62 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 210 20% 98%;
-    --foreground: 220 26% 22%;
+    --background: 220 25% 99%;
+    --foreground: 220 30% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 26% 22%;
+    --card-foreground: 220 30% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 26% 22%;
+    --popover-foreground: 220 30% 12%;
 
-    --primary: 221 83% 32%;
+    --primary: 230 85% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 20% 96%;
-    --secondary-foreground: 221 83% 32%;
+    --secondary: 220 20% 97%;
+    --secondary-foreground: 230 85% 45%;
 
-    --muted: 210 20% 96%;
-    --muted-foreground: 220 9% 46%;
+    --muted: 220 20% 95%;
+    --muted-foreground: 220 15% 40%;
 
-    --accent: 158 64% 52%;
+    --accent: 165 90% 48%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 158 64% 52%;
+    --border: 220 18% 92%;
+    --input: 220 18% 92%;
+    --ring: 165 90% 48%;
 
-    --radius: 0.75rem;
-    
-    --gradient-hero: linear-gradient(135deg, hsl(221 83% 32%), hsl(158 64% 52%));
-    --gradient-contact: linear-gradient(135deg, hsl(221 83% 32% / 0.95), hsl(158 64% 52% / 0.95));
-    --shadow-card: 0 4px 6px -1px hsl(221 83% 32% / 0.1), 0 2px 4px -1px hsl(221 83% 32% / 0.06);
-    --shadow-hover: 0 20px 25px -5px hsl(221 83% 32% / 0.15), 0 10px 10px -5px hsl(221 83% 32% / 0.08);
+    --radius: 1rem;
+
+    --gradient-hero: linear-gradient(135deg, hsl(230 85% 45%), hsl(270 70% 60%), hsl(165 90% 48%));
+    --gradient-card: linear-gradient(135deg, hsl(230 85% 45% / 0.05), hsl(165 90% 48% / 0.05));
+    --gradient-accent: linear-gradient(135deg, hsl(165 90% 48%), hsl(180 85% 45%));
+    --gradient-contact: linear-gradient(135deg, hsl(230 85% 45% / 0.95), hsl(165 90% 48% / 0.95));
+    --gradient-mesh: radial-gradient(at 0% 0%, hsl(230 85% 45% / 0.15) 0px, transparent 50%),
+                      radial-gradient(at 100% 0%, hsl(270 70% 60% / 0.15) 0px, transparent 50%),
+                      radial-gradient(at 100% 100%, hsl(165 90% 48% / 0.15) 0px, transparent 50%),
+                      radial-gradient(at 0% 100%, hsl(190 85% 50% / 0.15) 0px, transparent 50%);
+    --shadow-sm: 0 1px 2px 0 hsl(220 30% 12% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(220 30% 12% / 0.08), 0 2px 4px -2px hsl(220 30% 12% / 0.05);
+    --shadow-lg: 0 10px 15px -3px hsl(220 30% 12% / 0.08), 0 4px 6px -4px hsl(220 30% 12% / 0.05);
+    --shadow-xl: 0 20px 25px -5px hsl(220 30% 12% / 0.1), 0 8px 10px -6px hsl(220 30% 12% / 0.05);
+    --shadow-2xl: 0 25px 50px -12px hsl(220 30% 12% / 0.15);
+    --shadow-card: var(--shadow-md);
+    --shadow-hover: var(--shadow-xl);
+    --shadow-glow: 0 0 20px hsl(165 90% 48% / 0.3);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -112,8 +118,20 @@ All colors MUST be HSL.
     background: var(--gradient-hero);
   }
 
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
   .gradient-contact {
     background: var(--gradient-contact);
+  }
+
+  .gradient-mesh {
+    background: var(--gradient-mesh);
   }
 
   .shadow-card {
@@ -124,14 +142,85 @@ All colors MUST be HSL.
     box-shadow: var(--shadow-hover);
   }
 
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
   .transition-smooth {
     transition: var(--transition-smooth);
   }
 
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  /* Glassmorphism effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .glass-dark {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Animations */
   .animate-scroll {
     animation: scroll 30s linear infinite;
   }
 
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out;
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.6s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.5s ease-out;
+  }
+
+  .animate-slide-in-left {
+    animation: slide-in-left 0.6s ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-right 0.6s ease-out;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 3s ease-in-out infinite;
+  }
+
+  /* Hover effects */
+  .hover-lift {
+    transition: all 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .hover-glow:hover {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  /* Keyframes */
   @keyframes scroll {
     0% {
       transform: translateX(0);
@@ -152,7 +241,65 @@ All colors MUST be HSL.
     }
   }
 
-  .animate-fade-in {
-    animation: fade-in 0.6s ease-out;
+  @keyframes fade-up {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scale-in {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes slide-in-left {
+    0% {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-in-right {
+    0% {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.6;
+    }
   }
 }
