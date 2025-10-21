@@ -5,14 +5,17 @@ const HeroSection = () => {
   const scrollToDemo = () => {
     const element = document.querySelector("#demonstration");
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({
+        behavior: "smooth"
+      });
     }
   };
-
   const scrollToContact = () => {
     const element = document.querySelector("#contact");
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({
+        behavior: "smooth"
+      });
     }
   };
 
@@ -190,8 +193,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;

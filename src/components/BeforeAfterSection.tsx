@@ -1,15 +1,11 @@
 import { X, Check, ArrowDown } from "lucide-react";
-
 const BeforeAfterSection = () => {
-  return (
-    <section className="relative py-24 px-4 overflow-hidden bg-gradient-to-b from-background via-secondary/30 to-background">
+  return <section className="relative py-24 px-4 overflow-hidden bg-gradient-to-b from-background via-secondary/30 to-background">
       <div className="container mx-auto relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-20 animate-fade-up">
-            <div className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full mb-6">
-              <span className="text-accent font-semibold text-sm">Impact</span>
-            </div>
+            
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Votre quotidien{" "}
@@ -148,8 +144,6 @@ const BeforeAfterSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default BeforeAfterSection;
