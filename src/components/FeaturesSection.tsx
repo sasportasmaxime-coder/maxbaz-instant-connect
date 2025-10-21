@@ -36,7 +36,7 @@ const FeaturesSection = () => {
             </span>
           </h2>
 
-          <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto my-0">MaxBaz automatise la prise de rendez-vous pour les artisans et professionnels. Elle transforme chaque appel manqué en opportunité grâce à notre technologie qui qualifie et confirme le créneau choisi automatiquement.</p>
+          <p className="text-xl text-muted-foreground leading-loose max-w-3xl mx-auto my-4">MaxBaz automatise la prise de rendez-vous pour les artisans et professionnels. Elle transforme chaque appel manqué en opportunité grâce à notre technologie qui qualifie et confirme le créneau choisi automatiquement.</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto">
