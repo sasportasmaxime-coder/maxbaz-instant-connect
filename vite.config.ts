@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: mode === "production" ? "/maxbaz-instant-connect/" : "/",
+  base: mode === "production" ? "/max.github.io/" : "/",
   server: {
     host: "::",
     port: 8080,
