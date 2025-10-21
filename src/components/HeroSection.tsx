@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Play, Check, Sparkles, TrendingUp, Zap } from "lucide-react";
+import { Play, Check, TrendingUp, Zap } from "lucide-react";
 
 const HeroSection = () => {
   const scrollToDemo = () => {
@@ -31,15 +31,6 @@ const HeroSection = () => {
       <div className="container mx-auto relative z-10">
         <div className="grid md:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
           <div className="space-y-8 animate-fade-up">
-            {/* Badge preuve sociale */}
-            <div className="inline-flex items-center gap-3 glass px-5 py-3 rounded-full shadow-lg hover-scale transition-smooth">
-              <div className="relative">
-                <Sparkles className="w-4 h-4 text-accent" />
-                <span className="absolute inset-0 bg-accent/30 rounded-full blur-md animate-pulse-slow"></span>
-              </div>
-              <span className="text-primary font-semibold text-sm">+2000 artisans nous font confiance</span>
-            </div>
-
             {/* Titre impact */}
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-foreground">
               Transformez vos appels manqués en{" "}
