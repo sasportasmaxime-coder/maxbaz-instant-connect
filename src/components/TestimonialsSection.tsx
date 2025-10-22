@@ -1,9 +1,6 @@
 import { Star } from "lucide-react";
-import { useEffect, useRef } from "react";
 
 const TestimonialsSection = () => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-
   const testimonials = [
     {
       name: "Marie L.",
@@ -55,33 +52,6 @@ const TestimonialsSection = () => {
     },
   ];
 
-  // Défilement automatique lent
-  useEffect(() => {
-    const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
-
-    let scrollPosition = 0;
-    const scrollSpeed = 0.5; // Vitesse très lente
-
-    const scroll = () => {
-      scrollPosition += scrollSpeed;
-
-      // Reset quand on atteint la moitié (effet infini)
-      if (scrollPosition >= scrollContainer.scrollWidth / 2) {
-        scrollPosition = 0;
-      }
-
-      scrollContainer.scrollLeft = scrollPosition;
-    };
-
-    const intervalId = setInterval(scroll, 30);
-
-    return () => clearInterval(intervalId);
-  }, []);
-
-  // Dupliquer les témoignages pour l'effet infini
-  const duplicatedTestimonials = [...testimonials, ...testimonials];
-
   return (
     <section className="py-20 bg-gradient-to-b from-white to-blue-50/30 overflow-hidden">
       <div className="container mx-auto px-6">
@@ -95,20 +65,16 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Conteneur de défilement */}
-        <div className="relative">
+        <div className="relative overflow-hidden">
           {/* Gradient gauche */}
           <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
 
           {/* Gradient droit */}
           <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-blue-50/30 to-transparent z-10 pointer-events-none"></div>
 
-          {/* Défilement */}
-          <div
-            ref={scrollRef}
-            className="flex gap-6 overflow-x-hidden py-4"
-            style={{ scrollBehavior: 'auto' }}
-          >
-            {duplicatedTestimonials.map((testimonial, index) => (
+          {/* Animation de défilement infini */}
+          <div className="flex gap-6 py-4 animate-infinite-scroll">
+            {[...testimonials, ...testimonials].map((testimonial, index) => (
               <div
                 key={index}
                 className="flex-shrink-0 w-[380px] bg-white rounded-2xl p-6 shadow-lg border border-gray-100"
