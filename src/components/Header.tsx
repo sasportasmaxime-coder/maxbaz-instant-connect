@@ -41,7 +41,7 @@ const Header = () => {
   };
   return <header className={`fixed top-0 left-0 right-0 z-50 transition-smooth ${isScrolled ? "glass shadow-lg border-b border-border/50" : "bg-transparent"}`}>
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-20 bg-blue-300">
           {/* Logo */}
           <a href="#accueil" onClick={e => {
           e.preventDefault();
@@ -64,7 +64,7 @@ const Header = () => {
             e.preventDefault();
             scrollToSection(item.href);
           }} className="relative px-4 py-2 text-sm font-semibold text-foreground hover:text-primary transition-smooth rounded-lg group">
-                <span className="relative z-10">{item.label}</span>
+                <span className="relative z-10 font-bold">{item.label}</span>
                 <span className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-smooth rounded-lg"></span>
               </a>)}
           </nav>
