@@ -1,29 +1,24 @@
 import { Button } from "@/components/ui/button";
 import { Play, Check, TrendingUp, BarChart, Users } from "lucide-react";
-
 const HeroSection = () => {
   const scrollToDemo = () => {
     const element = document.querySelector("#demonstration");
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({
+        behavior: "smooth"
+      });
     }
   };
-
   const scrollToContact = () => {
     const element = document.querySelector("#contact");
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({
+        behavior: "smooth"
+      });
     }
   };
-
-  const benefits = [
-    "Réponse automatique en moins de 60 secondes",
-    "+40% de rendez-vous confirmés",
-    "Synchronisation avec votre agenda"
-  ];
-
-  return (
-    <section id="accueil" className="relative pt-32 pb-24 px-4 overflow-hidden bg-gradient-to-b from-blue-50/30 via-white to-white">
+  const benefits = ["Réponse automatique en moins de 60 secondes", "+40% de rendez-vous confirmés", "Synchronisation avec votre agenda"];
+  return <section id="accueil" className="relative pt-32 pb-24 px-4 overflow-hidden bg-gradient-to-b from-blue-50/30 via-white to-white">
       {/* Formes fluides en arrière-plan */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 -left-20 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl"></div>
@@ -38,31 +33,18 @@ const HeroSection = () => {
             {/* Titre principal */}
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-gray-900">
               Transformez vos appels manqués en{" "}
-              <span className="text-blue-600">
-                clients satisfaits
-              </span>
+              <span className="text-green-500">clients satisfaits.</span>
             </h1>
 
             {/* Sous-titre */}
-            <p className="text-xl md:text-2xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-              Notre IA répond à vos prospects 24/7, qualifie leurs besoins et planifie automatiquement vos rendez-vous.
-            </p>
+            <p className="text-xl md:text-2xl text-gray-600 leading-relaxed max-w-3xl mx-auto">MaxBaz répond à vos prospects 24/7, qualifie leurs besoins et planifie automatiquement vos rendez-vous.</p>
 
             {/* Boutons CTA côte à côte */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button
-                size="lg"
-                onClick={scrollToContact}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all"
-              >
+              <Button size="lg" onClick={scrollToContact} className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all">
                 Essayer gratuitement 14 jours
               </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                onClick={scrollToDemo}
-                className="border-2 border-gray-300 hover:border-blue-600 text-gray-700 hover:text-blue-600 px-8 py-6 text-lg font-semibold rounded-xl transition-all"
-              >
+              <Button variant="outline" size="lg" onClick={scrollToDemo} className="border-2 border-gray-300 hover:border-blue-600 px-8 py-6 text-lg font-semibold rounded-xl transition-all bg-emerald-500 hover:bg-emerald-400 text-neutral-50">
                 <Play className="mr-2 h-5 w-5" />
                 Voir comment ça marche
               </Button>
@@ -111,7 +93,7 @@ const HeroSection = () => {
                       </div>
                       <TrendingUp className="w-5 h-5 text-green-500" />
                     </div>
-                    <p className="text-3xl font-bold text-gray-900 mb-1">127</p>
+                    <p className="text-3xl font-bold text-gray-900 mb-1">82</p>
                     <p className="text-sm text-gray-500">RDV ce mois</p>
                   </div>
 
@@ -135,13 +117,27 @@ const HeroSection = () => {
                     <p className="text-sm text-gray-500">7 derniers jours</p>
                   </div>
                   <div className="flex items-end justify-between h-32 gap-3">
-                    <div className="flex-1 bg-blue-200 rounded-t-lg" style={{ height: '60%' }}></div>
-                    <div className="flex-1 bg-blue-300 rounded-t-lg" style={{ height: '75%' }}></div>
-                    <div className="flex-1 bg-blue-400 rounded-t-lg" style={{ height: '55%' }}></div>
-                    <div className="flex-1 bg-blue-500 rounded-t-lg" style={{ height: '85%' }}></div>
-                    <div className="flex-1 bg-blue-600 rounded-t-lg" style={{ height: '100%' }}></div>
-                    <div className="flex-1 bg-blue-500 rounded-t-lg" style={{ height: '70%' }}></div>
-                    <div className="flex-1 bg-blue-400 rounded-t-lg" style={{ height: '80%' }}></div>
+                    <div className="flex-1 bg-blue-200 rounded-t-lg" style={{
+                    height: '60%'
+                  }}></div>
+                    <div className="flex-1 bg-blue-300 rounded-t-lg" style={{
+                    height: '75%'
+                  }}></div>
+                    <div className="flex-1 bg-blue-400 rounded-t-lg" style={{
+                    height: '55%'
+                  }}></div>
+                    <div className="flex-1 bg-blue-500 rounded-t-lg" style={{
+                    height: '85%'
+                  }}></div>
+                    <div className="flex-1 bg-blue-600 rounded-t-lg" style={{
+                    height: '100%'
+                  }}></div>
+                    <div className="flex-1 bg-blue-500 rounded-t-lg" style={{
+                    height: '70%'
+                  }}></div>
+                    <div className="flex-1 bg-blue-400 rounded-t-lg" style={{
+                    height: '80%'
+                  }}></div>
                   </div>
                 </div>
               </div>
@@ -160,7 +156,9 @@ const HeroSection = () => {
               </div>
             </div>
 
-            <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-4 border border-gray-200 animate-fade-in hidden md:block" style={{ animationDelay: '200ms' }}>
+            <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-4 border border-gray-200 animate-fade-in hidden md:block" style={{
+            animationDelay: '200ms'
+          }}>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
                   <TrendingUp className="w-5 h-5 text-blue-600" />
@@ -175,25 +173,19 @@ const HeroSection = () => {
 
           {/* Bénéfices clés en bas */}
           <div className="mt-20 grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {benefits.map((benefit, index) => (
-              <div
-                key={index}
-                className="flex items-start gap-4 animate-fade-up"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
+            {benefits.map((benefit, index) => <div key={index} className="flex items-start gap-4 animate-fade-up" style={{
+            animationDelay: `${index * 100}ms`
+          }}>
                 <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
                   <Check className="w-5 h-5 text-blue-600" strokeWidth={2.5} />
                 </div>
                 <div>
                   <p className="text-gray-900 font-semibold text-base">{benefit}</p>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
