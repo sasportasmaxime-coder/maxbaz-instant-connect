@@ -10,10 +10,8 @@ import PricingSection from "@/components/PricingSection";
 import FaqSection from "@/components/FaqSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
-
 const Index = () => {
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <Header />
       <StickyCtaButton />
       <main>
@@ -21,15 +19,13 @@ const Index = () => {
         <TestimonialsSection />
         <DemoSection />
         <FeaturesSection />
-        <FeaturesDetailSection />
+        
         <BeforeAfterSection />
         <PricingSection />
         <FaqSection />
         <ContactSection />
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
