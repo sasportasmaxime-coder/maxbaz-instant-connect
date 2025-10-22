@@ -81,7 +81,7 @@ const DemoSection = () => {
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-smooth" />
               </Button>
 
-              <Button variant="outline" size="lg" className="text-lg px-8 py-6 glass border-2 hover-lift bg-blue-700 hover:bg-blue-600 text-neutral-50">
+              <Button variant="outline" size="lg" className="text-lg px-8 py-6 glass border-2 hover-lift bg-blue-700 hover:bg-blue-600 rounded-sm text-neutral-50">
                 <span>Planifier une démo</span>
               </Button>
             </div>
