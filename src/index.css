@@ -170,8 +170,8 @@ All colors MUST be HSL.
   }
 
   /* Animations */
-  .animate-infinite-scroll {
-    animation: scroll 60s linear infinite;
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
   }
 
   .animate-fade-in {
