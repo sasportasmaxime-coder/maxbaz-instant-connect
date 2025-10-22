@@ -43,9 +43,7 @@ const BeforeAfterSection = () => {
               <div className="space-y-6">
                 <div className="group bg-card border-2 border-red-500/20 rounded-2xl p-6 hover-lift transition-smooth shadow-lg">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center flex-shrink-0">
-                      <X className="h-6 w-6 text-red-500" strokeWidth={2.5} />
-                    </div>
+                    
                     <div className="flex-1">
                       <p className="font-bold text-foreground text-xl">Appels manqués</p>
                     </div>
@@ -99,9 +97,7 @@ const BeforeAfterSection = () => {
               <div className="space-y-6">
                 <div className="group bg-card border-2 border-accent/30 rounded-2xl p-6 hover-lift transition-smooth shadow-lg">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl gradient-accent flex items-center justify-center flex-shrink-0 shadow-md">
-                      <Check className="h-6 w-6 text-white" strokeWidth={2.5} />
-                    </div>
+                    
                     <div className="flex-1">
                       <p className="font-bold text-foreground text-xl">Appels manqués</p>
                     </div>
@@ -109,7 +105,7 @@ const BeforeAfterSection = () => {
                 </div>
 
                 <div className="flex justify-center">
-                  <div className="w-12 h-12 rounded-full gradient-accent/20 flex items-center justify-center shadow-md">
+                  <div className="w-12 h-12 rounded-full gradient-accent/20 flex items-center justify-center shadow-md bg-transparent">
                     <ArrowDown className="h-6 w-6 text-accent" strokeWidth={2.5} />
                   </div>
                 </div>
@@ -120,7 +116,7 @@ const BeforeAfterSection = () => {
                       <Check className="h-6 w-6 text-white" strokeWidth={2.5} />
                     </div>
                     <div className="flex-1">
-                      <p className="font-bold text-foreground text-xl">Qualification automatique</p>
+                      <p className="font-bold text-foreground text-xl">Qualification et prise de rendez-vous automatique </p>
                     </div>
                   </div>
                 </div>
