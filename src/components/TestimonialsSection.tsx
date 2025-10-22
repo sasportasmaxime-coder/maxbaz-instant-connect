@@ -51,13 +51,14 @@ const TestimonialsSection = () => {
                     <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                   ))}
                 </div>
+                <p className="text-foreground mb-4">{testimonial.text}</p>
                 <div>
                   <p className="font-semibold text-foreground">{testimonial.name}</p>
                   <p className="text-sm text-muted-foreground">{testimonial.profession}</p>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
